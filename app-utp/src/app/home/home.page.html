@@ -36,3 +36,20 @@
 <ion-button expand="block" color="danger" (click)="validarRegistro()">
   Validar registro
 </ion-button>
+
+<ion-button expand="block" color="danger" (click)="continuarADetalle()">
+  Continuar al detalle
+</ion-button>
+
+<ion-button expand="block" color="danger" [disabled]="cargando" (click)="guardarEnNube()">
+  {{ cargando ? 'Guardando...' : 'Guardar en nube' }}
+</ion-button>
+<ion-button expand="block" fill="clear" (click)="limpiarFormulario()">
+  Limpiar
+</ion-button>
+<ion-note color="success" *ngIf="mensaje">
+  {{ mensaje }}
+</ion-note>
+<ion-note color="danger" *ngIf="error">
+  {{ error }}
+</ion-note>
